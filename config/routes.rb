@@ -3,4 +3,11 @@ Rails.application.routes.draw do
 
   # Serve websocket cable requests in-process
   # mount ActionCable.server => '/cable'
+  root to: "index#index"
+  resources :educational, only: [] do
+    collection do
+      get :ruby_basic
+      get :ruby_basic_answer
+    end
+  end
 end
