@@ -1,13 +1,10 @@
 <!doctype html>
-<% @code ||= "class User\n  attr_accessor :name\n\n  def initialize(name)\n    @name = name\n  end\n\n  def admin?\n    @name == 'Admin'\n  end\nend\n\nuser = User.new('Bob')\nputs user\nputs user.admin?\n"  %>
 <html data-code="<%= @code %>" style="background-color: #f5f5f5; min-height: 100%;">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <title>e-learning教材</title>
-
-  <link href="/Users/taishi/Desktop/e-learn/stylesheets/application.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="try try_index">
 
