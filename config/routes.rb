@@ -8,6 +8,14 @@ Rails.application.routes.draw do
     collection do
       get :ruby_basic_input
       get :ruby_basic
+      get :object_input
+      get :object
+      get :method_input
+      get :method
+      get :if_input
+      get :if
+      get :for_input
+      get :for
     end
   end
 end

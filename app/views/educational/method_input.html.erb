@@ -1,0 +1,57 @@
+<!doctype html>
+<html data-code="<%= @code %>" data-answer="<%= @answer %>" data-showanswer="false" style="background-color: #f5f5f5; min-height: 100%;">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>e-learning教材</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+<body class="try try_index">
+
+  <nav class='navbar navbar-default opal-nav' role='navigation'>
+  <div class='container'>
+  </div>
+</nav>
+
+  <script>$('a[href="'+location.pathname.replace(/\/$/,'')+'"]').parent().addClass('active')</script>
+
+  <div class="container">
+<script>Opal.load('try_opal');</script>
+
+<div class="page-header"><h1>メソッド</h1></div>
+  <iframe src="//www.slideshare.net/slideshow/embed_code/key/3ZR8VOuoRNsM6N" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px">
+
+<div class="page-header"><h2><a href="/educational/method">演習問題へ進む→</a></h2></div>
+
+<p></p>
+<div id="viewer" class="well hide" style="padding:0">
+</div>
+<!-- output -->
+<div class="row" id="wrapper">
+  <div class="col-md-12">
+  </div>
+</div>
+
+
+  </div>
+
+
+<footer>
+</footer>
+
+
+  <script>
+    $('a[href="'+location.pathname.replace(/\/$/,'')+'"]').parent('li').addClass('active')
+    $('#answer').click(function(){
+      document.querySelector("html").dataset.showanswer = "true"
+      document.getElementById('run_code').click();
+      document.querySelector("html").dataset.showanswer = "false"
+    });
+
+  </script>
+</body>
+</html>

@@ -15,6 +15,7 @@ class EducationalController < ApplicationController
 
     # "9 * 5"を文字列としてputsしてください
     EOS
+
     @answer = <<-'EOS'.strip_heredoc
     # "Hello world"をputsしてください
     puts "Hello world"
@@ -27,5 +28,59 @@ class EducationalController < ApplicationController
     # "9 * 5"を文字列としてputsしてください
     puts "9 * 5"
     EOS
+  end
+
+  def object_input
+  end
+  def object
+  end
+  def method_input
+  end
+  def method
+  end
+  def if_input
+  end
+  def if
+    @code = <<-'EOS'.strip_heredoc
+    x = 111*111
+    y = 66*66
+    z = ""
+
+    # xが12000より大きい場合に"変数xは12000より大きいです"とputsしてください
+
+
+    # yが5000より大きい場合に"変数yは5000より大きいです"とputsしてください
+
+
+    # zが空の文字列の場合に"変数zは空です"とputsしてください
+    EOS
+
+    @answer = <<-'EOS'.strip_heredoc
+    x = 111*111
+    y = 66*66
+    z = ""
+
+    # xが12000より大きい場合に"変数xは12000より大きいです"とputsしてください
+
+    if (x > 12000)
+      puts "変数xは12000より大きいです"
+    end
+
+    # yが5000より大きい場合に"変数yは5000より大きいです"とputsしてください
+
+    if (y > 5000)
+      puts "変数yは5000より大きいです"
+    end
+
+    # zが空の文字列の場合に"変数zは空です"とputsしてください
+
+    if (z.empty?)
+      puts "変数zは空です"
+    end
+    EOS
+  end
+  def for_input
+  end
+  def for
   end
 end
