@@ -27995,7 +27995,14 @@ Opal.modules.try_opal = function(Opal) {
             e[e.length - 1],
             t.link["$[]="]("href", "?code:" + encodeURIComponent(t.editor.$value()));
             try {
-                return n = $scope.get("Opal").$compile(t.editor.$value(), $hash2(["source_map_enabled"], {
+                var codee
+                if (document.querySelector("html").dataset.showanswer == "true") {
+                  codee = document.querySelector("html").dataset.answer
+                  t.editor["native"].setValue(codee)
+                } else {
+                  codee = t.editor.$value()
+                }
+                return n = $scope.get("Opal").$compile(codee, $hash2(["source_map_enabled"], {
                     source_map_enabled: !1
                 })),
                 e = [n],

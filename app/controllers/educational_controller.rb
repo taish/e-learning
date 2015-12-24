@@ -1,5 +1,11 @@
 require 'active_support/core_ext/string/strip'
 class EducationalController < ApplicationController
+  layout false
+
+  def basic
+    redirect_to "/educational/ruby_basic"
+  end
+
   def ruby_basic
     @code = <<-'EOS'.strip_heredoc
     # "Hello world"をputsしてください
@@ -10,10 +16,7 @@ class EducationalController < ApplicationController
 
     # "9 * 5"を文字列としてputsしてください
     EOS
-  end
-
-  def ruby_basic_answer
-    @code = <<-'EOS'.strip_heredoc
+    @answer = <<-'EOS'.strip_heredoc
     # "Hello world"をputsしてください
     puts "Hello world"
 

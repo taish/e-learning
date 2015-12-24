@@ -1,10 +1,14 @@
 <!doctype html>
-<html data-code="<%= @code %>" style="background-color: #f5f5f5; min-height: 100%;">
+<html data-code="<%= @code %>" data-answer="<%= @answer %>" data-showanswer="false" style="background-color: #f5f5f5; min-height: 100%;">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <title>e-learning教材</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
 </head>
 <body class="try try_index">
 
@@ -26,7 +30,7 @@
 <div class="row" id="wrapper">
   <div id="editor_wrapper" class="col-md-6">
     <a href="#" id="run_code" class="btn btn-primary">コードを実行</a>
-    <a href="https://rocky-sea-9649.herokuapp.com/educational/ruby_basic_answer" class="btn btn-primary">答えを見る</a>
+    <a href="#" id="answer" class="btn btn-primary">答えを見る</a>
     <p></p>
     <div id="editor" class="well" style="padding:0"></div>
   </div>
@@ -57,6 +61,12 @@
 
   <script>
     $('a[href="'+location.pathname.replace(/\/$/,'')+'"]').parent('li').addClass('active')
+    $('#answer').click(function(){
+      document.querySelector("html").dataset.showanswer = "true"
+      document.getElementById('run_code').click();
+      document.querySelector("html").dataset.showanswer = "false"
+    });
+
   </script>
 </body>
 </html>
