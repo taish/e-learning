@@ -2,8 +2,7 @@ require 'active_support/core_ext/string/strip'
 class EducationalController < ApplicationController
   layout false
 
-  def basic
-    redirect_to "/educational/ruby_basic"
+  def ruby_basic_input
   end
 
   def ruby_basic

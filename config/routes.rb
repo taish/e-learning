@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root to: "index#index"
   resources :educational, only: [] do
     collection do
-      get :basic
+      get :ruby_basic_input
       get :ruby_basic
     end
   end
