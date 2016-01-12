@@ -30,16 +30,38 @@ class EducationalController < ApplicationController
     EOS
   end
 
+  # 3章.オブジェクト
   def object_input
   end
+
   def object
+    @code = <<-'EOS'.strip_heredoc
+    # 数値オブジェクト3.14を四捨五入してputsしてください
+
+
+    # 文字列オブジェクト"Ruby"を反転させてputsしてください
+    EOS
+
+    @answer = <<-'EOS'.strip_heredoc
+    # 数値オブジェクト3.14を四捨五入してputsしてください
+    puts 3.14.round
+
+
+    # 文字列オブジェクト"Ruby"を反転させてputsしてください
+    puts "Ruby".reverse
+    EOS
   end
+
+  # 5章.クラス
   def method_input
   end
+
   def method
   end
+
   def if_input
   end
+
   def if
     @code = <<-'EOS'.strip_heredoc
     x = 111*111
