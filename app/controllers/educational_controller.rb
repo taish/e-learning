@@ -57,6 +57,25 @@ class EducationalController < ApplicationController
   end
 
   def method
+    @code = <<-'EOS'.strip_heredoc
+    # クラス「Animal」を定義し、変数「dog」「cat」にインスタンスを格納してください
+
+    # 変数「dog」「cat」をそれぞれputsしてください
+    EOS
+
+    @answer = <<-'EOS'.strip_heredoc
+    # クラス「Animal」を定義し、変数「dog」「cat」にインスタンスを格納してください
+    class Animal
+    end
+
+    dog = Animal.new
+    cat = Animal.new
+
+    # 変数「dog」「cat」をそれぞれputsしてください
+    puts dog
+    puts cat
+
+    EOS
   end
 
   def if_input
@@ -101,8 +120,24 @@ class EducationalController < ApplicationController
     end
     EOS
   end
+
   def for_input
   end
+
   def for
+    @code = <<-'EOS'.strip_heredoc
+    # 1から10までの数字をfor文で繰り返しputsしてください
+
+    EOS
+
+    @answer = <<-'EOS'.strip_heredoc
+    # 1から10までの数字をfor文で繰り返しputsしてください
+    for number in 1..10 do
+      puts number
+    end
+
+    EOS
   end
+
+  # 理解度確認テスト
 end
