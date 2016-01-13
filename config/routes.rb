@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get :if
       get :for_input
       get :for
+      get :last_test
     end
   end
 end

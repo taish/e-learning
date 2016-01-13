@@ -2,6 +2,44 @@ require 'active_support/core_ext/string/strip'
 class EducationalController < ApplicationController
   layout false
 
+  def last_test
+    @code = <<-'EOS'.strip_heredoc
+    # 1から10までの累乗をそれぞれfor文でputsしてください
+
+
+    # クラス「Animal」を定義し、変数「dog」「cat」にインスタンスを格納してください
+
+
+    # if文で「dog」「cat」が等しいかどうかを比較し、
+    # 等しい場合は "dogとcatは同じ動物です"
+    # 異なる場合は "dogとcatは違う動物です" とputsしてください
+    EOS
+
+    @answer = <<-'EOS'.strip_heredoc
+    # 1から10までの累乗をそれぞれfor文でputsしてください
+    for number in 1..10 do
+      puts number * number
+    end
+
+    # クラス「Animal」を定義し、変数「dog」「cat」にインスタンスを格納してください
+    class Animal
+    end
+
+    dog = Animal.new
+    cat = Animal.new
+
+
+    # if文で「dog」「cat」が等しいかどうかを比較し、
+    # 等しい場合は "dogとcatは同じ動物です"
+    # 異なる場合は "dogとcatは違う動物です" とputsしてください
+    if dog == cat
+      puts "dogとcatは同じ動物です"
+    else
+      puts "dogとcatは違う動物です"
+    end
+    EOS
+  end
+
   def ruby_basic_input
   end
 
